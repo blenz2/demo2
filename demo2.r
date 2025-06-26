@@ -28,3 +28,7 @@ fibonacci_recursive <- function(n) {
 # test
 assert_that(fibonacci_recursive(1) == 0)
 assert_that(fibonacci_recursive(2) == 1)
+
+for (n in 3:20) {
+    assert_that(fibonacci_recursive(n) == fibonacci_recursive(n-1) + fibonacci_recursive(n-2))
+}
