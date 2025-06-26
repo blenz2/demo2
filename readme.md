@@ -3,4 +3,5 @@
  Headings and links can go in .md files 
  
  ### data visualization of fibonacci numbers
+ # syntax to include image: ![]()
  ![Alt text here: Figure representing Fibonacci numbers on linear and log scales](fibonacci_numbers_figure.png)
