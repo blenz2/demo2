@@ -52,6 +52,7 @@ for (n in 3:50){
     assert_that(abs(fibonacci_exact(n) - (
         fibonacci_exact(n-1) + fibonacci_exact(n-2)
     )) < 0.0001)
+<<<<<<< HEAD
 }
 
 # add visualization
@@ -76,3 +77,6 @@ plot1 + plot2
 
 ggsave("fibonacci_numbers_figure.png", width=12, height=5)
 patchwork()
+=======
+}
+>>>>>>> 989687dbfa917afad4dcbdaa0aea141d0e08c933
