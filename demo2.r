@@ -1,5 +1,6 @@
 # demo from harvard youtube watched 06/26/25
 
+# calculate fibonacci method 1
 fibonacci <- function(n) {
     c(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 
       987, 1597, 2584, 4181)[n]
@@ -15,7 +16,7 @@ for (n in 3:20) {
 
 # no errors on this test means it passed! 
 
-# step 2: recursively calculate Fibonacci numbers
+# method 2: recursively calculate Fibonacci numbers
 fibonacci_recursive <- function(n) {
     if (n == 1) {
         return(0)
@@ -31,4 +32,24 @@ assert_that(fibonacci_recursive(2) == 1)
 
 for (n in 3:20) {
     assert_that(fibonacci_recursive(n) == fibonacci_recursive(n-1) + fibonacci_recursive(n-2))
+}
+
+# method 3 
+# define fibonacci with exact formula
+fibonacci_exact <- function(n) {
+    phi <- (1 + sqrt(5))/2 # this is the golden ratio
+    fib <- (phi^(n-1) - (-1/phi)^(n-1))/sqrt(5)
+    return(fib)
+}
+
+
+# test
+assert_that(fibonacci_exact(1) == 0)
+assert_that(fibonacci_exact(2) == 1)
+
+# check method 3
+for (n in 3:50){
+    assert_that(abs(fibonacci_exact(n) - (
+        fibonacci_exact(n-1) + fibonacci_exact(n-2)
+    )) < 0.0001)
 }
