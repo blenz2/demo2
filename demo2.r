@@ -14,3 +14,17 @@ for (n in 3:20) {
 }
 
 # no errors on this test means it passed! 
+
+# step 2: recursively calculate Fibonacci numbers
+fibonacci_recursive <- function(n) {
+    if (n == 1) {
+        return(0)
+    } else if (n== 2) {
+        return(1) 
+    } else if (3 <= n) {
+        return(fibonacci_recursive(n-1) + fibonacci_recursive(n-2))
+        }
+}
+# test
+assert_that(fibonacci_recursive(1) == 0)
+assert_that(fibonacci_recursive(2) == 1)
